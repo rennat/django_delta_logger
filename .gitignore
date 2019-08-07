@@ -1,0 +1,11 @@
+*.egg-info
+*.pyc
+*.sqlite3
+/.coverage
+/.eggs
+/.idea
+/.venv*
+/.vscode
+/build
+/dist
+/pep8.txt
