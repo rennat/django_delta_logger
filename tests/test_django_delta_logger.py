@@ -117,10 +117,10 @@ class DeltaLoggerBasicUsageTestCase(TestCase):
                          'concurrent update includes concurrent changes')
 
     def test_get_events_for_model(self):
-        q = DeltaEvent.objects.get_events_for_model(ModelBar)
+        q = DeltaEvent.objects.get_events_for_models(ModelBar)
         self.assertIsInstance(q, models.QuerySet)
         self.assertEqual(6, q.count())
-        q = DeltaEvent.objects.get_events_for_model(
+        q = DeltaEvent.objects.get_events_for_models(
             ModelBar,
             event_type=DeltaEventType.CREATED
         )

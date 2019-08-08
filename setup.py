@@ -7,7 +7,7 @@ with open('README.md', 'r') as file_handle:
 
 setuptools.setup(
     name='django_delta_logger',
-    version='0.1.0',
+    version='0.1.1',
     author='Tanner Netterville',
     author_email='tannern@gmail.com',
     description='Model instance change logging for django models.',

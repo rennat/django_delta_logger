@@ -18,9 +18,13 @@ class DeltaEventManager(models.Manager):
             **kwargs
         )
     
-    def get_events_for_model(self, model, **kwargs):
-        content_type = ContentType.objects.get_for_model(model)
-        return self.filter(event_sender_type=content_type, **kwargs)
+    def get_events_for_models(self, *models, **kwargs):
+        content_types = [
+            ContentType.objects.get_for_model(model)
+            for model
+            in models
+        ]
+        return self.filter(event_sender_type__in=content_types, **kwargs)
 
 
 class DeltaEvent(models.Model):
